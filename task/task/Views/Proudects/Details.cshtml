@@ -1,0 +1,58 @@
+﻿@model task.Models.Proudect
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h3 style="margin-left:60px;margin-top:94px;font-size:31px;margin-bottom: 40px;">Details</h3>
+
+<div>
+  
+    <hr style="margin-top:-25px;"/>
+    <dl class="dl-horizontal" style="margin-left:302px;margin-top:46px;">
+        <dt>
+            <label class="control-label" style="color: #ffa45c;">CategoryName &nbsp;: @*@Html.DisplayNameFor(model => model.Category.Name)*@</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>
+
+        <dt>
+            <label class="control-label" style="color: #ffa45c;">Proudct Name &nbsp;: @*@Html.DisplayNameFor(model => model.Name)*@</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            <label class="control-label" style="color: #ffa45c;font-size: 19px;">Price &nbsp;: @*@Html.DisplayNameFor(model => model.Price)*@</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            <label class="control-label" style="color: #ffa45c;">Description &nbsp;: @*@Html.DisplayNameFor(model => model.Description)*@</label>
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            <label class="control-label" style="color: #ffa45c;">Image &nbsp;: </label>
+        </dt>
+        <dd>
+            @*@Html.DisplayFor(model => model.Categoryimage)*@
+         
+            <img src="~/categoriesimage/@Model.Proudctimage" style="width: 23%;margin-top: 13px;height: 247px;" />
+
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", null, new { id = Model.ProductId, @style = ";color: #ffa45c ;font-size:30px;margin-left:343px;" }) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+    @Html.ActionLink("Back to List", "Index", null, new { @style = "background: #d9d5d2;margin-left: 101px; font-size: 24px;color: #000000;border-radius: 25px" })
+</p>

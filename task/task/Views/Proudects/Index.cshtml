@@ -1,0 +1,82 @@
+﻿@model IEnumerable<task.Models.Proudect>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @style = "margin-left: 44px; font-size: 21px;" })
+</p>
+<table class="table">
+    @*<tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Category.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ProductId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ProductId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ProductId })
+            </td>
+        </tr>
+    }*@
+
+</table>
+@foreach (var item in Model)
+{
+
+    <div class="col-sm col-md-6 col-lg-4 ftco-animate" style="margin-top: 15px;">
+        <div class="product" style="display:inline">
+            <a href="#" class="img-prod" style="margin-top: 31px;">
+                <img class="img-fluid" src="~/categoriesimage/@item.Proudctimage" alt="Colorlib Template" style="height:380px;width:81%">
+
+                <div class="overlay" style="width: 85%;height: 380px;margin-top: 31px;"></div>
+            </a>
+            <div class="text py-3 px-3">
+                   
+                <h3>@Html.DisplayFor(modelItem => item.Category.Name)</h3>
+                <h3>@Html.DisplayFor(modelItem => item.Price)</h3>
+                <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+                <h3> @Html.DisplayFor(modelItem => item.Description)</h3>
+                <div class="d-flex" style="margin-top: 5px;">
+                    @Html.ActionLink("Edit", "Edit", null, new { id = item.ProductId }, new { @style = "background: #d9d5d2;color: #ffa45c ;font-size: 17px;margin-left: 10px;text-align: center;border-radius: 25px;width: 68px;" })
+                    @Html.ActionLink("Details", "Details", new { id = item.ProductId }, new { @style = "border: 1px solid #ffa45c;color: #fff; background: #ffa45c;margin-left: 10px;font-size: 15px;text-align: center;border-radius: 25px;width: 68px;" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ProductId }, new { @style = "color: brown;font-size: 19px;margin-left: 15px;font-weight: bold;" })
+
+                </div>
+                <p class="bottom-area d-flex px-3">
+                    @*<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
+            <a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>*@
+                </p>
+            </div>
+        </div>
+    </div>
+}

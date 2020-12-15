@@ -1,0 +1,58 @@
+﻿@model IEnumerable<task.Models.Category>
+
+@{
+
+}
+
+
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @style = "margin-left: 44px; font-size: 21px;" })
+</p>
+@*<table class="table">
+
+
+
+    </table>*@
+@foreach (var item in Model)
+{
+
+    <div class="col-sm col-md-6 col-lg-4 ftco-animate" style="margin-top:48px;">
+        <div class="product" style="display:inline">
+            <a href="#" class="img-prod">
+                <img class="img-fluid" src="~/categoriesimage/@item.Categoryimage" alt="Colorlib Template" style="height:380px;width:81%">
+
+                <div class="overlay" style="width: 85%;height: 380px;"></div>
+            </a>
+            <div class="text py-3 px-3">
+                <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+                <h3> @Html.DisplayFor(modelItem => item.Description)</h3>
+                <div class="d-flex" style="margin-top: 5px;">
+                    @Html.ActionLink("Edit", "Edit", null, new { id = item.CategoryId }, new { @style = "background: #d9d5d2;color: #ffa45c ;font-size: 17px;margin-left: 10px;text-align: center;border-radius: 25px;width: 68px;" })
+                    @Html.ActionLink("Details", "Details", new { id = item.CategoryId }, new { @style = "border: 1px solid #ffa45c;color: #fff; background: #ffa45c;margin-left: 10px;font-size: 15px;text-align: center;border-radius: 25px;width: 68px;" })
+                    @Ajax.ActionLink("Delete", "Delete", new { id = item.CategoryId }, new AjaxOptions()
+                       { UpdateTargetId = "div1", InsertionMode = InsertionMode.Replace })
+
+                    @*@Html.ActionLink("Delete", "Delete", new { id = item.CategoryId },new {@style = "color: brown;font-size: 19px;margin-left: 15px;font-weight: bold;"  })*@
+
+                </div>
+                <p class="bottom-area d-flex px-3">
+                    @*<a href="#" class="add-to-cart text-center py-2 mr-1"><span>Add to cart <i class="ion-ios-add ml-1"></i></span></a>
+                        <a href="#" class="buy-now text-center py-2">Buy now<span><i class="ion-ios-cart ml-1"></i></span></a>*@
+                </p>
+            </div>
+        </div>
+    </div>
+}
+<div id="div1"></div>
+
+
+
+
+
+
+
+
+
+
+
